@@ -19,7 +19,7 @@ describe('Adopt Brooke, add a Chewy Toy and a Travel Carrier, pay with Check', f
         await driver.findElement(By.css('input.rounded_button')).click();
 
         let formPage = new FormPage(driver);
-        formPage.submitForm(driver);
+        formPage.submitFormCheckPayment(driver);
     });
 
     after(() => driver && driver.quit());
