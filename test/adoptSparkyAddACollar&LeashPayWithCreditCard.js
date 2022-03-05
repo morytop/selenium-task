@@ -3,23 +3,23 @@ const assert = require('assert');
 const {Builder, Key, By, until} = require('selenium-webdriver');
 const FormPage = require('../pageobjects/formPage');
 
-describe('Adopt Brooke, add a Chewy Toy and a Travel Carrier, pay with Check', function () {
+describe('Adopt Sparky, add a Collar & Leash, pay with Credit Card', function () {
     let driver;
 
     before(async function() {
         driver = await new Builder().forBrowser('chrome').build();
     });
 
-    it('Adopt Brooke', async function() {
+    it('Adopt Sparky', async function() {
         await driver.get('https://spartantest-puppies.herokuapp.com/');
+        await driver.findElement(By.className('next_page')).click();
         await driver.findElement(By.css('input.rounded_button')).click();
         await driver.findElement(By.css('input.rounded_button')).click();
-        await driver.findElement(By.css('input#toy')).click();
-        await driver.findElement(By.css('input#carrier')).click();
+        await driver.findElement(By.css('input#collar')).click();;
         await driver.findElement(By.css('input.rounded_button')).click();
 
         let formPage = new FormPage(driver);
-        formPage.submitForm(driver);
+        formPage.submitFormCreditCardPayment(driver);
     });
 
     after(() => driver && driver.quit());
