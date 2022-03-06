@@ -12,12 +12,12 @@ describe('Adopt 2 Random Dogs, add a Collar & Leash to each, pay with Credit Car
 
     it('Adopt Maggie Mae', async function() {
         await driver.get('https://spartantest-puppies.herokuapp.com/');
-        await driver.findElement(By.xpath('/html/body/div/div[1]/div[3]/div[4]/div/div[4]/form/input')).click();
+        await driver.findElement(By.css("form[action='/puppies/1']")).click();
         await driver.findElement(By.css('input.rounded_button')).click();
         await driver.findElement(By.css('.cart_buttons form:nth-child(2)')).click();
     });
 
-   it('Adopt Spud', async function() {
+   it('Adopt Twinkie', async function() {
         await driver.findElement(By.css('.pagination a:nth-child(4)')).click();
         await driver.findElement(By.css('input.rounded_button')).click();
         await driver.findElement(By.className('button_to')).click();

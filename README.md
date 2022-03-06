@@ -13,8 +13,22 @@ Scenarios:
 
 Node.js installed
 
+# Build project
+
+Here are the steps I took to build the project:
+
+* Create a new folder
+* Use `npm init`
+* Use `npm install selenium-webdriver`
+* Use `npm install chromedriver`
+* Use `npm install mocha`
+
 # Running test
 
-To run a test use:
+To run all tests use:
 
 `npm test .\test`
+
+To run a specific test use:
+
+`npm test .\test\<testName.js>`
